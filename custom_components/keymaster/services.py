@@ -182,9 +182,9 @@ def generate_package_files(hass: HomeAssistant, name: str) -> None:
     if lockname != name:
         return
 
-    inputlockpinheader = f"input_text.{lockname}_pin"
-    activelockheader = f"binary_sensor.active_{lockname}"
-    input_reset_code_slot_header = f"input_boolean.reset_codeslot_{lockname}"
+    inputlockpinheader = f"input_text.keymaster_{lockname}_pin"
+    activelockheader = f"binary_sensor.keymaster_active_{lockname}"
+    input_reset_code_slot_header = f"input_boolean.keymaster_reset_codeslot_{lockname}"
     lockentityname = primary_lock.lock_entity_id
     sensorname = lockname
     doorsensorentityname = primary_lock.door_sensor_entity_id or ""

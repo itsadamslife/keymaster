@@ -232,7 +232,7 @@ def handle_zwave_js_event(hass: HomeAssistant, config_entry: ConfigEntry, evt: E
 
         # Lookup name for usercode
         code_slot_name_state = (
-            hass.states.get(f"input_text.{lock.lock_name}_name_{code_slot}")
+            hass.states.get(f"input_text.keymaster_{lock.lock_name}_name_{code_slot}")
             if code_slot and code_slot != 0
             else None
         )
@@ -329,7 +329,7 @@ def handle_state_change(
 
         # Lookup name for usercode
         code_slot_name_state = hass.states.get(
-            f"input_text.{lock.lock_name}_name_{alarm_level_value}"
+            f"input_text.keymaster_{lock.lock_name}_name_{alarm_level_value}"
         )
 
         # Fire state change event
@@ -376,7 +376,7 @@ async def async_reset_code_slot_if_pin_unknown(
     an initial state.
     """
     for x in range(start_from, start_from + code_slots):
-        pin_state = hass.states.get(f"input_text.{lock_name}_pin_{x}")
+        pin_state = hass.states.get(f"input_text.keymaster_{lock_name}_pin_{x}")
         if pin_state and pin_state.state == STATE_UNKNOWN:
             await hass.services.async_call(
                 "script",

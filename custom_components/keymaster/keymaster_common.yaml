@@ -8,13 +8,13 @@
 
 ###############  input_boolean:  #################
 input_boolean:
-  LOCKNAME_lock_notifications:
+  keymaster_LOCKNAME_lock_notifications:
     name: CASE_LOCK_NAME Lock Notifications
-  LOCKNAME_dooraccess_notifications:
+  keymaster_LOCKNAME_dooraccess_notifications:
     name: CASE_LOCK_NAME Door Notifications
-  LOCKNAME_garageacess_notifications:
+  keymaster_LOCKNAME_garageacess_notifications:
     name: CASE_LOCK_NAME Garage Notifications
-  LOCKNAME_reset_lock:
+  keymaster_LOCKNAME_reset_lock:
     name: CASE_LOCK_NAME reset lock
   keymaster_LOCKNAME_autolock:
     name: "Auto Lock Enabled"
@@ -43,59 +43,59 @@ script:
     sequence:
       - service: input_boolean.turn_off
         data_template:
-          entity_id: "input_boolean.enabled_LOCKNAME_{{ code_slot | string }}"
+          entity_id: "input_boolean.keymaster_enabled_LOCKNAME_{{ code_slot | string }}"
       - service: input_text.set_value
         data_template:
-          entity_id: "input_text.LOCKNAME_name_{{ code_slot | string }}"
+          entity_id: "input_text.keymaster_LOCKNAME_name_{{ code_slot | string }}"
           value: ""
       - service: input_text.set_value
         data_template:
-          entity_id: "input_text.LOCKNAME_pin_{{ code_slot | string }}"
+          entity_id: "input_text.keymaster_LOCKNAME_pin_{{ code_slot | string }}"
           value: ""
       - service: input_boolean.turn_off
         data_template:
-          entity_id: "input_boolean.notify_LOCKNAME_{{ code_slot | string }}"
+          entity_id: "input_boolean.keymaster_notify_LOCKNAME_{{ code_slot | string }}"
       - service: input_number.set_value
         data_template:
-          entity_id: "input_number.accesscount_LOCKNAME_{{ code_slot | string }}"
+          entity_id: "input_number.keymaster_accesscount_LOCKNAME_{{ code_slot | string }}"
           value: "0"
       - service: input_datetime.set_datetime
         data_template:
-          entity_id: "input_datetime.start_date_LOCKNAME_{{ code_slot | string }}"
+          entity_id: "input_datetime.keymaster_start_date_LOCKNAME_{{ code_slot | string }}"
           datetime: >-
             {{ now().strftime('%Y-%m-%d 00:00') }}
       - service: input_datetime.set_datetime
         data_template:
-          entity_id: "input_datetime.end_date_LOCKNAME_{{ code_slot | string }}"
+          entity_id: "input_datetime.keymaster_end_date_LOCKNAME_{{ code_slot | string }}"
           datetime: >-
             {{ now().strftime('%Y-%m-%d 00:00') }}
       - service: input_boolean.turn_off
         data_template:
-          entity_id: "input_boolean.daterange_LOCKNAME_{{ code_slot | string }}"
+          entity_id: "input_boolean.keymaster_daterange_LOCKNAME_{{ code_slot | string }}"
       - service: input_boolean.turn_off
         data_template:
-          entity_id: "input_boolean.accesslimit_LOCKNAME_{{ code_slot | string }}"
+          entity_id: "input_boolean.keymaster_accesslimit_LOCKNAME_{{ code_slot | string }}"
       - service: input_boolean.turn_off
         data_template:
-          entity_id: "input_boolean.reset_codeslot_LOCKNAME_{{ code_slot | string }}"
+          entity_id: "input_boolean.keymaster_reset_codeslot_LOCKNAME_{{ code_slot | string }}"
       # Loop through each day of the week and reset the entities related to each one
       - repeat:
           count: 7
           sequence:
             - service: input_datetime.set_datetime
               data_template:
-                entity_id: "input_datetime.{{ days[repeat.index - 1] }}_start_date_LOCKNAME_{{ code_slot | string }}"
+                entity_id: "input_datetime.keymaster_{{ days[repeat.index - 1] }}_start_date_LOCKNAME_{{ code_slot | string }}"
                 time: "{{ now().replace(hour=00,minute=00,second=00).strftime('%H:%M:%S') }}"
             - service: input_datetime.set_datetime
               data_template:
-                entity_id: "input_datetime.{{ days[repeat.index - 1] }}_end_date_LOCKNAME_{{ code_slot | string }}"
+                entity_id: "input_datetime.keymaster_{{ days[repeat.index - 1] }}_end_date_LOCKNAME_{{ code_slot | string }}"
                 time: "{{ now().replace(hour=00,minute=00,second=00).strftime('%H:%M:%S') }}"
             - service: input_boolean.turn_on
               data_template:
-                entity_id: "input_boolean.{{ days[repeat.index - 1] }}_LOCKNAME_{{ code_slot | string }}"
+                entity_id: "input_boolean.keymaster_{{ days[repeat.index - 1] }}_LOCKNAME_{{ code_slot | string }}"
             - service: input_boolean.turn_on
               data_template:
-                entity_id: "input_boolean.{{ days[repeat.index - 1] }}_inc_LOCKNAME_{{ code_slot | string }}"
+                entity_id: "input_boolean.keymaster_{{ days[repeat.index - 1] }}_inc_LOCKNAME_{{ code_slot | string }}"
 
   keymaster_LOCKNAME_start_timer:
     sequence:
@@ -117,13 +117,13 @@ script:
               {{ states('input_text.keymaster_LOCKNAME_autolock_door_time_day')}}
             {% endif %}
 
-  boltchecked_lock_LOCKNAME:
+  keymaster_boltchecked_lock_LOCKNAME:
     sequence:
       - service: lock.lock
         data:
           entity_id: LOCKENTITYNAME
 
-  boltchecked_retry_LOCKNAME:
+  keymaster_boltchecked_retry_LOCKNAME:
     sequence:
       - service: input_boolean.turn_on
         target:
@@ -156,7 +156,7 @@ automation:
         lockname: LOCKNAME
     condition:
       - condition: state
-        entity_id: input_boolean.LOCKNAME_lock_notifications
+        entity_id: input_boolean.keymaster_LOCKNAME_lock_notifications
         state: "on"
     action:
       - service: script.keymaster_LOCKNAME_manual_notify
@@ -175,9 +175,9 @@ automation:
       - condition: template
         value_template: "{{ trigger.event.data.code_slot > 0 }}"
       - condition: template
-        value_template: "{{ is_state('input_boolean.notify_LOCKNAME_' + trigger.event.data.code_slot | string, 'on') }}"
+        value_template: "{{ is_state('input_boolean.keymaster_notify_LOCKNAME_' + trigger.event.data.code_slot | string, 'on') }}"
       - condition: state
-        entity_id: input_boolean.LOCKNAME_lock_notifications
+        entity_id: input_boolean.keymaster_LOCKNAME_lock_notifications
         state: "off"
     action:
       - service: script.keymaster_LOCKNAME_manual_notify
@@ -192,7 +192,7 @@ automation:
       platform: state
     condition:
       - condition: state
-        entity_id: "input_boolean.LOCKNAME_dooraccess_notifications"
+        entity_id: "input_boolean.keymaster_LOCKNAME_dooraccess_notifications"
         state: "on"
       - condition: template
         value_template: "{{ trigger.from_state.state in ('on', 'off') and trigger.to_state.state in ('on', 'off') }}"
@@ -211,7 +211,7 @@ automation:
       - condition: template
         value_template: >-
           {{
-            is_state('input_boolean.enabled_LOCKNAME_' + trigger.entity_id.split('_')[-1], 'on')
+            is_state('input_boolean.keymaster_enabled_LOCKNAME_' + trigger.entity_id.split('_')[-1], 'on')
             and
             (trigger.from_state.state != trigger.to_state.state)
           }}
@@ -224,19 +224,19 @@ automation:
       - service: input_boolean.turn_off
         data_template:
           entity_id: >-
-            {{ 'input_boolean.enabled_LOCKNAME_' + trigger.entity_id.split('_')[-1] }}
+            {{ 'input_boolean.keymaster_enabled_LOCKNAME_' + trigger.entity_id.split('_')[-1] }}
 
   - alias: keymaster_CASE_LOCK_NAME Reset
     id: keymaster_CASE_LOCK_NAME Reset
     trigger:
-      entity_id: input_boolean.LOCKNAME_reset_lock
+      entity_id: input_boolean.keymaster_LOCKNAME_reset_lock
       platform: state
       from: "off"
       to: "on"
     action:
       - service: script.keymaster_LOCKNAME_reset_lock
       - service: input_boolean.turn_off
-        entity_id: input_boolean.LOCKNAME_reset_lock
+        entity_id: input_boolean.keymaster_LOCKNAME_reset_lock
 
   - alias: keymaster_CASE_LOCK_NAME Decrement Access Count
     id: keymaster_CASE_LOCK_NAME Decrement Access Count
@@ -248,7 +248,7 @@ automation:
     condition:
       - condition: template
         # make sure decrementing access entries is enabled
-        value_template: "{{ is_state('input_boolean.accesslimit_LOCKNAME_' + trigger.event.data.code_slot | string, 'on') }}"
+        value_template: "{{ is_state('input_boolean.keymaster_accesslimit_LOCKNAME_' + trigger.event.data.code_slot | string, 'on') }}"
       - condition: template
         # Check for Keypad Unlock code
         value_template: >-
@@ -260,7 +260,7 @@ automation:
     action:
       - service: input_number.decrement
         data_template:
-          entity_id: "{{ 'input_number.accesscount_LOCKNAME_' + trigger.event.data.code_slot | string }}"
+          entity_id: "{{ 'input_number.keymaster_accesscount_LOCKNAME_' + trigger.event.data.code_slot | string }}"
 
   - alias: keymaster_LOCKNAME_locked
     id: keymaster_LOCKNAME_locked
@@ -303,7 +303,7 @@ automation:
           message: >-
             {{ 'The LOCKNAME sensor indicates the door has been closed, re-attempting to lock.'}}
       - service: lock.lock
-        entity_id: lock.boltchecked_LOCKNAME
+        entity_id: lock.keymaster_boltchecked_LOCKNAME
 
   - alias: keymaster_LOCKNAME_opened
     id: keymaster_LOCKNAME_opened
@@ -356,7 +356,7 @@ automation:
         entity_id: timer.keymaster_LOCKNAME_autolock
     action:
       - service: lock.lock
-        entity_id: lock.boltchecked_LOCKNAME
+        entity_id: lock.keymaster_boltchecked_LOCKNAME
 
   - alias: keymaster_LOCKNAME_timer_canceled
     id: keymaster_LOCKNAME_timer_canceled
@@ -427,10 +427,10 @@ timer:
 ###################  lock:  ####################
 lock:
   - platform: template
-    name: boltchecked_LOCKNAME
+    name: keymaster_boltchecked_LOCKNAME
     value_template: "{{ is_state('LOCKENTITYNAME', 'locked') }}"
     lock:
-      service: "{{ 'script.boltchecked_retry_LOCKNAME' if (is_state('DOORSENSORENTITYNAME', 'on')) else 'script.boltchecked_lock_LOCKNAME' }}"
+      service: "{{ 'script.keymaster_boltchecked_retry_LOCKNAME' if (is_state('DOORSENSORENTITYNAME', 'on')) else 'script.keymaster_boltchecked_lock_LOCKNAME' }}"
     unlock:
       service: lock.unlock
       data:
@@ -438,7 +438,7 @@ lock:
 
 ###############  input_text:  #################
 input_text:
-  LOCKNAME_lockname:
+  keymaster_LOCKNAME_lockname:
     initial: LOCKNAME
     name: "Lock Name"
 
