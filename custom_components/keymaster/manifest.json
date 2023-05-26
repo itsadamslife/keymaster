@@ -1,6 +1,6 @@
 {
   "domain": "keymaster",
-  "name": "keymaster",
+  "name": "keymaster-security",
   "documentation": "https://github.com/FutureTense/keymaster",
   "dependencies": [],
   "after_dependencies": [
