@@ -524,10 +524,10 @@ class LockUsercodeUpdateCoordinator(DataUpdateCoordinator):
 
         # Build data from entities
         active_binary_sensor = (
-            f"binary_sensor.active_{self._primary_lock.lock_name}_{code_slot}"
+            f"binary_sensor.keymaster_active_{self._primary_lock.lock_name}_{code_slot}"
         )
         active = self.hass.states.get(active_binary_sensor)
-        pin_data = f"input_text.{self._primary_lock.lock_name}_pin_{code_slot}"
+        pin_data = f"input_text.keymaster_{self._primary_lock.lock_name}_pin_{code_slot}"
         pin = self.hass.states.get(pin_data)
 
         # If slot is enabled return the PIN

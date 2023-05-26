@@ -102,6 +102,8 @@ input_boolean:
     name: "Enforce PIN limit"
   keymaster_reset_codeslot_LOCKNAME_TEMPLATENUM:
     name: "Reset Code Slot"
+  keymaster_security_control_LOCKNAME_TEMPLATENUM:
+    name: "Control Security System"
 
   keymaster_sun_LOCKNAME_TEMPLATENUM:
     name: "Sunday"

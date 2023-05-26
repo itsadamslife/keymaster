@@ -69,4 +69,4 @@
                       - input_boolean.keymaster_sat_LOCKNAME_TEMPLATENUM
                       - input_boolean.keymaster_sat_inc_LOCKNAME_TEMPLATENUM
                       - input_datetime.keymaster_sat_start_date_LOCKNAME_TEMPLATENUM
-                      - input_datetime.keymaster_sat_end_date_LOCKNAME_TEM
+                      - input_datetime.keymaster_sat_end_date_LOCKNAME_TEMPLATENUM

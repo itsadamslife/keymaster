@@ -10,3 +10,6 @@ would become
 Do this step for each lock and door sensor.
 
 This will automatically generate the keymaster files just as the `setup.sh` script would have.
+
+**Important**
+I make no claims to be good with programming. I made a fork of this project to implement some minor changes for my own needs. Use this fork at your own risk. I will try to keep good documentation of the changes I've made in case you're interested in using this fork.
