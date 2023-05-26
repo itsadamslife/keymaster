@@ -1,7 +1,7 @@
 {
-  "domain": "keymaster",
-  "name": "keymaster-security",
-  "documentation": "https://github.com/FutureTense/keymaster",
+  "domain": "keymaster_security",
+  "name": "keymaster_security",
+  "documentation": "https://github.com/itsadamslife/keymaster-security",
   "dependencies": [],
   "after_dependencies": [
     "automation",
@@ -16,9 +16,9 @@
     "zwave",
     "zwave_js"
   ],
-  "codeowners": ["@FutureTense", "@firstof9", "@raman325"],
+  "codeowners": ["@itsadamslife"],
   "config_flow": true,
-  "issue_tracker": "https://github.com/FutureTense/keymaster/issues",
+  "issue_tracker": "https://github.com/itsadamslife/keymaster-security/issues",
   "requirements": [],
   "iot_class": "local_polling",
   "version": "v0.0.0"
