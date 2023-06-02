@@ -1,6 +1,6 @@
 {
-  "name": "keymaster-security",
-  "zip_release": true,
-  "filename": "keymaster-security.zip",
+  "name": "lockcontrol",
+  // "zip_release": true,
+  // "filename": "lockcontrol.zip",
   "homeassistant": "2022.4.0"
 }

@@ -319,7 +319,7 @@ async def system_health_check(hass: HomeAssistant, config_entry: ConfigEntry) ->
     else:
         hass.data[DOMAIN][INTEGRATION] = "unknown"
 
-    hass.data[DOMAIN]["network_sensor"] = slugify(f"{primary_lock.lock_name}: Network")
+    hass.data[DOMAIN]["network_sensor"] = slugify(f"km_{primary_lock.lock_name}: Network")
 
 
 async def async_unload_entry(hass: HomeAssistant, config_entry: ConfigEntry) -> bool:
@@ -524,10 +524,10 @@ class LockUsercodeUpdateCoordinator(DataUpdateCoordinator):
 
         # Build data from entities
         active_binary_sensor = (
-            f"binary_sensor.keymaster_active_{self._primary_lock.lock_name}_{code_slot}"
+            f"binary_sensor.km_active_{self._primary_lock.lock_name}_{code_slot}"
         )
         active = self.hass.states.get(active_binary_sensor)
-        pin_data = f"input_text.keymaster_{self._primary_lock.lock_name}_pin_{code_slot}"
+        pin_data = f"input_text.km_{self._primary_lock.lock_name}_pin_{code_slot}"
         pin = self.hass.states.get(pin_data)
 
         # If slot is enabled return the PIN

@@ -1,7 +1,7 @@
 {
-  "domain": "keymaster_security",
-  "name": "keymaster_security",
-  "documentation": "https://github.com/itsadamslife/keymaster-security",
+  "domain": "lockcontrol",
+  "name": "lockcontrol",
+  "documentation": "https://github.com/FutureTense/keymaster",
   "dependencies": [],
   "after_dependencies": [
     "automation",
@@ -16,10 +16,10 @@
     "zwave",
     "zwave_js"
   ],
-  "codeowners": ["@itsadamslife"],
+  "codeowners": ["@FutureTense", "@firstof9", "@raman325"],
   "config_flow": true,
-  "issue_tracker": "https://github.com/itsadamslife/keymaster-security/issues",
+  "issue_tracker": "https://github.com/FutureTense/keymaster/issues",
   "requirements": [],
   "iot_class": "local_polling",
-  "version": "v0.0.0"
+  "version": "v0.0.85"
 }

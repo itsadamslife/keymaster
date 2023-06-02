@@ -59,7 +59,7 @@ async def async_setup_entry(
             sensor_name = slugify(
                 f"{config_entry.data[CONF_LOCK_NAME]}_code_slot_{slot}"
             )
-            entity_id = f"sensor.{sensor_name}"
+            entity_id = f"sensor.km_{sensor_name}"
             if ent_reg.async_get(entity_id):
                 await platform.async_remove_entity(entity_id)
                 ent_reg.async_remove(entity_id)
@@ -102,9 +102,8 @@ class CodesSensor(CoordinatorEntity, SensorEntity):
 
         self._attr_icon = "mdi:lock-smart"
         self._attr_extra_state_attributes = {ATTR_CODE_SLOT: self._code_slot}
-        self._attr_name = f"{self.primary_lock.lock_name}: {self._name}"
-        self._attr_entity = slugify(self._attr_name)
-        self._attr_unique_id = f"keymaster_{self._attr_entity}"
+        self._attr_name = f"km_{self.primary_lock.lock_name}: {self._name}"
+        self._attr_unique_id = slugify(self._attr_name)
 
     @property
     def native_value(self) -> Optional[str]:

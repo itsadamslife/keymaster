@@ -38,6 +38,7 @@ from .const import (
     ATTR_ACTION_CODE,
     ATTR_ACTION_TEXT,
     ATTR_CODE_SLOT_NAME,
+    ATTR_CODE_SLOT_ALARM,
     ATTR_NAME,
     ATTR_NOTIFICATION_SOURCE,
     CHILD_LOCKS,
@@ -232,9 +233,14 @@ def handle_zwave_js_event(hass: HomeAssistant, config_entry: ConfigEntry, evt: E
 
         # Lookup name for usercode
         code_slot_name_state = (
-            hass.states.get(f"input_text.keymaster_{lock.lock_name}_name_{code_slot}")
+            hass.states.get(f"input_text.km_{lock.lock_name}_name_{code_slot}")
             if code_slot and code_slot != 0
             else None
+        )
+
+        # Lookup alarm control for usercode
+        code_slot_alarm_state = hass.states.get(
+            f"input_boolean.km_alarm_{lock.lock_name}_{code_slot}"
         )
 
         hass.bus.fire(
@@ -249,6 +255,7 @@ def handle_zwave_js_event(hass: HomeAssistant, config_entry: ConfigEntry, evt: E
                 ATTR_CODE_SLOT_NAME: code_slot_name_state.state
                 if code_slot_name_state is not None
                 else "",
+                ATTR_CODE_SLOT_ALARM: code_slot_alarm_state,
             },
         )
         return
@@ -329,7 +336,12 @@ def handle_state_change(
 
         # Lookup name for usercode
         code_slot_name_state = hass.states.get(
-            f"input_text.keymaster_{lock.lock_name}_name_{alarm_level_value}"
+            f"input_text.km_{lock.lock_name}_name_{alarm_level_value}"
+        )
+
+        # Lookup alarm control for usercode
+        code_slot_alarm_state = hass.states.get(
+            f"input_boolean.km_alarm_{lock.lock_name}_{alarm_level_value}"
         )
 
         # Fire state change event
@@ -343,13 +355,13 @@ def handle_state_change(
                 ATTR_ACTION_CODE: alarm_type_value,
                 ATTR_ACTION_TEXT: action_text,
                 ATTR_CODE_SLOT: alarm_level_value or 0,
-                ATTR_CODE_SLOT_NAME: code_slot_name_state.state
+                ATTR_CODE_SLOT_NAME: code_slot_name_state
                 if code_slot_name_state is not None
                 else "",
+                ATTR_CODE_SLOT_ALARM: code_slot_alarm_state,
             },
         )
         return
-
 
 def reset_code_slot_if_pin_unknown(
     hass, lock_name: str, code_slots: int, start_from: int
@@ -376,11 +388,11 @@ async def async_reset_code_slot_if_pin_unknown(
     an initial state.
     """
     for x in range(start_from, start_from + code_slots):
-        pin_state = hass.states.get(f"input_text.keymaster_{lock_name}_pin_{x}")
+        pin_state = hass.states.get(f"input_text.km_{lock_name}_pin_{x}")
         if pin_state and pin_state.state == STATE_UNKNOWN:
             await hass.services.async_call(
                 "script",
-                f"keymaster_{lock_name}_reset_codeslot",
+                f"km_{lock_name}_reset_codeslot",
                 {ATTR_CODE_SLOT: x},
                 blocking=True,
             )

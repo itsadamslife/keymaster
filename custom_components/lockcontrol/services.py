@@ -58,7 +58,7 @@ async def init_child_locks(
     # LOCKNAME_copy_from_parent_TEMPLATENUM
     _LOGGER.debug("Syncing lock: %s", lockname)
     for x in range(start, start + slots):
-        the_service = f"keymaster_{lockname}_copy_from_parent_{x}"
+        the_service = f"km_{lockname}_copy_from_parent_{x}"
         _LOGGER.debug("Attempting to call script: %s", the_service)
         await call_service(hass, SCRIPT_DOMAIN, the_service)
     _LOGGER.debug("Sync complete")
@@ -182,9 +182,9 @@ def generate_package_files(hass: HomeAssistant, name: str) -> None:
     if lockname != name:
         return
 
-    inputlockpinheader = f"input_text.keymaster_{lockname}_pin"
-    activelockheader = f"binary_sensor.keymaster_active_{lockname}"
-    input_reset_code_slot_header = f"input_boolean.keymaster_reset_codeslot_{lockname}"
+    inputlockpinheader = f"input_text.km_{lockname}_pin"
+    activelockheader = f"binary_sensor.km_active_{lockname}"
+    input_reset_code_slot_header = f"input_boolean.km_reset_codeslot_{lockname}"
     lockentityname = primary_lock.lock_entity_id
     sensorname = lockname
     doorsensorentityname = primary_lock.door_sensor_entity_id or ""
@@ -257,11 +257,7 @@ def generate_package_files(hass: HomeAssistant, name: str) -> None:
 
     # Replace variables in common file
     for in_f, out_f, write_mode in (
-        (
-            f"keymaster_common{child_file}.yaml",
-            f"{lockname}_keymaster_common.yaml",
-            "w+",
-        ),
+        (f"lockcontrol_common{child_file}.yaml", f"{lockname}_lockcontrol_common.yaml", "w+",),
         (f"lovelace{child_file}.head", f"{lockname}_lovelace", "w+"),
     ):
         output_to_file_from_template(
@@ -274,7 +270,7 @@ def generate_package_files(hass: HomeAssistant, name: str) -> None:
         replacements["TEMPLATENUM"] = str(x)
 
         for in_f, out_f, write_mode in (
-            (f"keymaster{child_file}.yaml", f"{lockname}_keymaster_{x}.yaml", "w+"),
+            (f"lockcontrol{child_file}.yaml", f"{lockname}_lockcontrol_{x}.yaml", "w+"),
             (f"lovelace{child_file}.code", f"{lockname}_lovelace", "a"),
         ):
             output_to_file_from_template(

@@ -36,7 +36,7 @@ ENTITY_NAME = "Network"
 
 def generate_binary_sensor_name(lock_name: str) -> str:
     """Generate unique ID for network ready sensor."""
-    return f"{lock_name}: {ENTITY_NAME}"
+    return f"km_{lock_name}: {ENTITY_NAME}"
 
 
 async def async_setup_entry(hass, config_entry, async_add_entities):

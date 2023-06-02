@@ -1,0 +1,75 @@
+      - type: vertical-stack
+        cards:
+          - content: |
+              ## Code TEMPLATENUM
+            type: markdown
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - entity: input_text.km_LOCKNAME_name_TEMPLATENUM
+              - entity: input_text.km_LOCKNAME_pin_TEMPLATENUM
+              - entity: input_boolean.km_enabled_LOCKNAME_TEMPLATENUM
+              - entity: input_boolean.km_notify_LOCKNAME_TEMPLATENUM
+              - type: divider
+              - entity: input_boolean.km_override_parent_LOCKNAME_TEMPLATENUM
+              - type: divider
+              - entity: sensor.km_connected_LOCKNAME_TEMPLATENUM
+                state_color: true
+              - entity: binary_sensor.km_active_LOCKNAME_TEMPLATENUM
+                state_color: true
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Advanced Options
+                entities:
+                  - entity: input_boolean.km_alarm_LOCKNAME_TEMPLATENUM
+                  - entity: input_boolean.km_reset_codeslot_LOCKNAME_TEMPLATENUM
+                  - type: divider
+                  - entity: input_boolean.km_accesslimit_LOCKNAME_TEMPLATENUM
+                  - entity: input_number.km_accesscount_LOCKNAME_TEMPLATENUM
+                    type: 'custom:numberbox-card'
+                    icon: 'mdi:key-variant'
+                    speed: 250
+                  - type: divider
+                  - entity: input_boolean.km_daterange_LOCKNAME_TEMPLATENUM
+                  - entity: input_datetime.km_start_date_LOCKNAME_TEMPLATENUM
+                  - entity: input_datetime.km_end_date_LOCKNAME_TEMPLATENUM
+                  - type: 'custom:fold-entity-row'
+                    head:
+                      type: section
+                      label: Custom Weekdays
+                    entities:
+                      - input_boolean.km_sun_LOCKNAME_TEMPLATENUM
+                      - input_boolean.km_sun_inc_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_sun_start_date_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_sun_end_date_LOCKNAME_TEMPLATENUM
+                      - type: divider
+                      - input_boolean.km_mon_LOCKNAME_TEMPLATENUM
+                      - input_boolean.km_mon_inc_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_mon_start_date_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_mon_end_date_LOCKNAME_TEMPLATENUM
+                      - type: divider
+                      - input_boolean.km_tue_LOCKNAME_TEMPLATENUM
+                      - input_boolean.km_tue_inc_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_tue_start_date_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_tue_end_date_LOCKNAME_TEMPLATENUM
+                      - type: divider
+                      - input_boolean.km_wed_LOCKNAME_TEMPLATENUM
+                      - input_boolean.km_wed_inc_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_wed_start_date_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_wed_end_date_LOCKNAME_TEMPLATENUM
+                      - type: divider
+                      - input_boolean.km_thu_LOCKNAME_TEMPLATENUM
+                      - input_boolean.km_thu_inc_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_thu_start_date_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_thu_end_date_LOCKNAME_TEMPLATENUM
+                      - type: divider
+                      - input_boolean.km_fri_LOCKNAME_TEMPLATENUM
+                      - input_boolean.km_fri_inc_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_fri_start_date_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_fri_end_date_LOCKNAME_TEMPLATENUM
+                      - type: divider
+                      - input_boolean.km_sat_LOCKNAME_TEMPLATENUM
+                      - input_boolean.km_sat_inc_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_sat_start_date_LOCKNAME_TEMPLATENUM
+                      - input_datetime.km_sat_end_date_LOCKNAME_TEMPLATENUM

@@ -1,8 +1,8 @@
 """Constants for keymaster."""
 from homeassistant.const import STATE_LOCKED, STATE_UNLOCKED
 
-DOMAIN = "keymaster"
-VERSION = "v0.0.0"  # this will be automatically updated as part of the release workflow
+DOMAIN = "lockcontrol"
+VERSION = "v0.0.85"
 ISSUE_URL = "https://github.com/FutureTense/keymaster"
 PLATFORMS = ["binary_sensor", "sensor"]
 INTEGRATION = "zwave_integration"
@@ -18,13 +18,14 @@ ALARM_TYPE = "alarm_type"
 ACCESS_CONTROL = "access_control"
 
 # Events
-EVENT_KEYMASTER_LOCK_STATE_CHANGED = "keymaster_lock_state_changed"
+EVENT_KEYMASTER_LOCK_STATE_CHANGED = "km_lock_state_changed"
 
 # Event data constants
 ATTR_ACTION_CODE = "action_code"
 ATTR_ACTION_TEXT = "action_text"
 ATTR_CODE_SLOT_NAME = "code_slot_name"
 ATTR_NOTIFICATION_SOURCE = "notification_source"
+ATTR_CODE_SLOT_ALARM = "code_slot_alarm"
 
 # Attributes
 ATTR_CODE_SLOT = "code_slot"
@@ -52,7 +53,7 @@ CONF_START = "start_from"
 
 # Defaults
 DEFAULT_CODE_SLOTS = 10
-DEFAULT_PACKAGES_PATH = "packages/keymaster/"
+DEFAULT_PACKAGES_PATH = "packages/lockcontrol/"
 DEFAULT_START = 1
 DEFAULT_GENERATE = True
 DEFAULT_DOOR_SENSOR = "binary_sensor.fake"

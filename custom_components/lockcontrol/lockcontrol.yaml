@@ -1,7 +1,7 @@
 # yamllint disable
 ############  input_number:  #####################
 input_number:
-  keymaster_accesscount_LOCKNAME_TEMPLATENUM:
+  km_accesscount_LOCKNAME_TEMPLATENUM:
     name: "Unlock events"
     min: 0
     max: 100
@@ -10,179 +10,179 @@ input_number:
 
 #################  input_datetime:  ##############
 input_datetime:
-  keymaster_end_date_LOCKNAME_TEMPLATENUM:
+  km_end_date_LOCKNAME_TEMPLATENUM:
     name: "End"
     has_time: true
     has_date: true
-  keymaster_start_date_LOCKNAME_TEMPLATENUM:
+  km_start_date_LOCKNAME_TEMPLATENUM:
     name: "Start"
     has_time: true
     has_date: true
 
-  keymaster_sun_start_date_LOCKNAME_TEMPLATENUM:
+  km_sun_start_date_LOCKNAME_TEMPLATENUM:
     name: "Start"
     has_time: true
     has_date: false
-  keymaster_sun_end_date_LOCKNAME_TEMPLATENUM:
+  km_sun_end_date_LOCKNAME_TEMPLATENUM:
     name: "End"
     has_time: true
     has_date: false
 
-  keymaster_mon_start_date_LOCKNAME_TEMPLATENUM:
+  km_mon_start_date_LOCKNAME_TEMPLATENUM:
     name: "Start"
     has_time: true
     has_date: false
-  keymaster_mon_end_date_LOCKNAME_TEMPLATENUM:
+  km_mon_end_date_LOCKNAME_TEMPLATENUM:
     name: "End"
     has_time: true
     has_date: false
 
-  keymaster_tue_start_date_LOCKNAME_TEMPLATENUM:
+  km_tue_start_date_LOCKNAME_TEMPLATENUM:
     name: "Start"
     has_time: true
     has_date: false
-  keymaster_tue_end_date_LOCKNAME_TEMPLATENUM:
+  km_tue_end_date_LOCKNAME_TEMPLATENUM:
     name: "End"
     has_time: true
     has_date: false
 
-  keymaster_wed_start_date_LOCKNAME_TEMPLATENUM:
+  km_wed_start_date_LOCKNAME_TEMPLATENUM:
     name: "Start"
     has_time: true
     has_date: false
-  keymaster_wed_end_date_LOCKNAME_TEMPLATENUM:
+  km_wed_end_date_LOCKNAME_TEMPLATENUM:
     name: "End"
     has_time: true
     has_date: false
 
-  keymaster_thu_start_date_LOCKNAME_TEMPLATENUM:
+  km_thu_start_date_LOCKNAME_TEMPLATENUM:
     name: "Start"
     has_time: true
     has_date: false
-  keymaster_thu_end_date_LOCKNAME_TEMPLATENUM:
+  km_thu_end_date_LOCKNAME_TEMPLATENUM:
     name: "End"
     has_time: true
     has_date: false
 
-  keymaster_fri_start_date_LOCKNAME_TEMPLATENUM:
+  km_fri_start_date_LOCKNAME_TEMPLATENUM:
     name: "Start"
     has_time: true
     has_date: false
-  keymaster_fri_end_date_LOCKNAME_TEMPLATENUM:
+  km_fri_end_date_LOCKNAME_TEMPLATENUM:
     name: "End"
     has_time: true
     has_date: false
 
-  keymaster_sat_start_date_LOCKNAME_TEMPLATENUM:
+  km_sat_start_date_LOCKNAME_TEMPLATENUM:
     name: "Start"
     has_time: true
     has_date: false
-  keymaster_sat_end_date_LOCKNAME_TEMPLATENUM:
+  km_sat_end_date_LOCKNAME_TEMPLATENUM:
     name: "End"
     has_time: true
     has_date: false
 
 ####################  input_text:  ###############
 input_text:
-  keymaster_LOCKNAME_name_TEMPLATENUM:
+  km_LOCKNAME_name_TEMPLATENUM:
     name: "Name"
-  keymaster_LOCKNAME_pin_TEMPLATENUM:
+  km_LOCKNAME_pin_TEMPLATENUM:
     name: "PIN"
     mode: HIDE_PINS
 
 #################  input_boolean: ################
 input_boolean:
-  keymaster_notify_LOCKNAME_TEMPLATENUM:
+  km_alarm_LOCKNAME_TEMPLATENUM:
+    name: "Alarm Control"
+  km_notify_LOCKNAME_TEMPLATENUM:
     name: "Notifications"
-  keymaster_daterange_LOCKNAME_TEMPLATENUM:
+  km_daterange_LOCKNAME_TEMPLATENUM:
     name: "Use Date Range"
-  keymaster_enabled_LOCKNAME_TEMPLATENUM:
+  km_enabled_LOCKNAME_TEMPLATENUM:
     name: "Enabled"
-  keymaster_accesslimit_LOCKNAME_TEMPLATENUM:
+  km_accesslimit_LOCKNAME_TEMPLATENUM:
     name: "Enforce PIN limit"
-  keymaster_reset_codeslot_LOCKNAME_TEMPLATENUM:
+  km_reset_codeslot_LOCKNAME_TEMPLATENUM:
     name: "Reset Code Slot"
-  keymaster_security_control_LOCKNAME_TEMPLATENUM:
-    name: "Control Security System"
 
-  keymaster_sun_LOCKNAME_TEMPLATENUM:
+  km_sun_LOCKNAME_TEMPLATENUM:
     name: "Sunday"
 
-  keymaster_mon_LOCKNAME_TEMPLATENUM:
+  km_mon_LOCKNAME_TEMPLATENUM:
     name: "Monday"
 
-  keymaster_tue_LOCKNAME_TEMPLATENUM:
+  km_tue_LOCKNAME_TEMPLATENUM:
     name: "Tuesday"
 
-  keymaster_wed_LOCKNAME_TEMPLATENUM:
+  km_wed_LOCKNAME_TEMPLATENUM:
     name: "Wednesday"
 
-  keymaster_thu_LOCKNAME_TEMPLATENUM:
+  km_thu_LOCKNAME_TEMPLATENUM:
     name: "Thursday"
 
-  keymaster_fri_LOCKNAME_TEMPLATENUM:
+  km_fri_LOCKNAME_TEMPLATENUM:
     name: "Friday"
 
-  keymaster_sat_LOCKNAME_TEMPLATENUM:
+  km_sat_LOCKNAME_TEMPLATENUM:
     name: "Saturday"
 
-  keymaster_sun_inc_LOCKNAME_TEMPLATENUM:
-    name: "include (on)/exclude (off)"
+  km_sun_inc_LOCKNAME_TEMPLATENUM:
+    name: "in (on)/outside (off) timeframe"
 
-  keymaster_mon_inc_LOCKNAME_TEMPLATENUM:
-    name: "include (on)/exclude (off)"
+  km_mon_inc_LOCKNAME_TEMPLATENUM:
+    name: "in (on)/outside (off) timeframe"
 
-  keymaster_tue_inc_LOCKNAME_TEMPLATENUM:
-    name: "include (on)/exclude (off)"
+  km_tue_inc_LOCKNAME_TEMPLATENUM:
+    name: "in (on)/outside (off) timeframe"
 
-  keymaster_wed_inc_LOCKNAME_TEMPLATENUM:
-    name: "include (on)/exclude (off)"
+  km_wed_inc_LOCKNAME_TEMPLATENUM:
+    name: "in (on)/outside (off) timeframe"
 
-  keymaster_thu_inc_LOCKNAME_TEMPLATENUM:
-    name: "include (on)/exclude (off)"
+  km_thu_inc_LOCKNAME_TEMPLATENUM:
+    name: "in (on)/outside (off) timeframe"
 
-  keymaster_fri_inc_LOCKNAME_TEMPLATENUM:
-    name: "include (on)/exclude (off)"
+  km_fri_inc_LOCKNAME_TEMPLATENUM:
+    name: "in (on)/outside (off) timeframe"
 
-  keymaster_sat_inc_LOCKNAME_TEMPLATENUM:
-    name: "include (on)/exclude (off)"
+  km_sat_inc_LOCKNAME_TEMPLATENUM:
+    name: "in (on)/outside (off) timeframe"
 
 ################  automation: #################
 automation:
-  - alias: keymaster_turn_on_access_limit_LOCKNAME_TEMPLATENUM
-    id: keymaster_turn_on_access_limit_LOCKNAME_TEMPLATENUM
+  - alias: km_turn_on_access_limit_LOCKNAME_TEMPLATENUM
+    id: km_turn_on_access_limit_LOCKNAME_TEMPLATENUM
     trigger:
       platform: state
-      entity_id: input_number.keymaster_accesscount_LOCKNAME_TEMPLATENUM
+      entity_id: input_number.km_accesscount_LOCKNAME_TEMPLATENUM
     condition:
       - condition: template
         value_template: >-
-          {{ (states('input_number.keymaster_accesscount_LOCKNAME_TEMPLATENUM') | int > 0) }}
+          {{ (states('input_number.km_accesscount_LOCKNAME_TEMPLATENUM') | int > 0) }}
     action:
       service: input_boolean.turn_on
       target:
-        entity_id: input_boolean.keymaster_accesslimit_LOCKNAME_TEMPLATENUM
+        entity_id: input_boolean.km_accesslimit_LOCKNAME_TEMPLATENUM
 
-  - alias: keymaster_synchronize_codeslot_LOCKNAME_TEMPLATENUM
-    id: keymaster_synchronize_codeslot_LOCKNAME_TEMPLATENUM
+  - alias: km_synchronize_codeslot_LOCKNAME_TEMPLATENUM
+    id: km_synchronize_codeslot_LOCKNAME_TEMPLATENUM
     initial_state: true
     mode: single
     max_exceeded: silent
     trigger:
       - platform: state
-        entity_id: "binary_sensor.keymaster_pin_synched_LOCKNAME_TEMPLATENUM"
+        entity_id: "binary_sensor.km_pin_synched_LOCKNAME_TEMPLATENUM"
         from: "on"
         to: "off"
     condition:
       - condition: template
         value_template: >-
-          {{ states("sensor.keymaster_LOCKNAME_code_slot_TEMPLATENUM") != "unavailable" }}
+          {{ states("sensor.km_LOCKNAME_code_slot_TEMPLATENUM") != "unavailable" }}
     action:
       - choose:
           # The code should be added to the lock's slot
           - conditions:
               - condition: template
-                value_template: "{{ is_state('binary_sensor.keymaster_active_LOCKNAME_TEMPLATENUM','on') }}"
+                value_template: "{{ is_state('binary_sensor.km_active_LOCKNAME_TEMPLATENUM','on') }}"
             sequence:
               - service: keymaster.add_code
                 data_template:
@@ -190,12 +190,12 @@ automation:
                   code_slot: >-
                     {{ TEMPLATENUM }}
                   usercode: >-
-                    {{ states('input_text.keymaster_LOCKNAME_pin_TEMPLATENUM').strip() }}
+                    {{ states('input_text.km_LOCKNAME_pin_TEMPLATENUM').strip() }}
 
           # The code should be removed from the lock's slot
           - conditions:
               - condition: template
-                value_template: "{{ is_state('binary_sensor.keymaster_active_LOCKNAME_TEMPLATENUM','off') }}"
+                value_template: "{{ is_state('binary_sensor.km_active_LOCKNAME_TEMPLATENUM','off') }}"
             sequence:
               - service: keymaster.clear_code
                 data_template:
@@ -207,7 +207,7 @@ automation:
 binary_sensor:
   - platform: template
     sensors:
-      keymaster_active_LOCKNAME_TEMPLATENUM:
+      km_active_LOCKNAME_TEMPLATENUM:
         friendly_name: "Desired PIN State"
         value_template: >-
           {## This template checks whether the PIN should be considered active based on ##}
@@ -224,19 +224,19 @@ binary_sensor:
 
           {## Get whether date range toggle is enabled as well as start and end date (integer yyyymmdd) ##}
           {## Determine whether current date is within date range using integer (yyyymmdd) comparison ##}
-          {% set is_date_range_enabled = is_state('input_boolean.keymaster_daterange_LOCKNAME_TEMPLATENUM', 'on') %}
-          {% set start_date = state_attr('input_datetime.keymaster_start_date_LOCKNAME_TEMPLATENUM', 'timestamp') | int %}
-          {% set end_date = state_attr('input_datetime.keymaster_end_date_LOCKNAME_TEMPLATENUM', 'timestamp') | int %}
+          {% set is_date_range_enabled = is_state('input_boolean.km_daterange_LOCKNAME_TEMPLATENUM', 'on') %}
+          {% set start_date = state_attr('input_datetime.km_start_date_LOCKNAME_TEMPLATENUM', 'timestamp') | int %}
+          {% set end_date = state_attr('input_datetime.km_end_date_LOCKNAME_TEMPLATENUM', 'timestamp') | int %}
 
           {## Only active if within the full datetime range. To get a single day both start and stop times must be set ##}
           {% set is_in_date_range = (start_date < end_date and current_timestamp >= start_date and current_timestamp <= end_date) %}
 
           {## Get current days start and end time (integer hhmm). Assume time range is considered enabled if start time != end time. ##}
           {## If time range is inclusive, check if current time is between start and end times. If exclusive, check if current time is before start time or after end time. ##}
-          {% set current_day_start_time = (states('input_datetime.keymaster_' + current_day + '_start_date_LOCKNAME_TEMPLATENUM')[0:5]).replace(':', '') | int %}
-          {% set current_day_end_time = (states('input_datetime.keymaster_' + current_day + '_end_date_LOCKNAME_TEMPLATENUM')[0:5]).replace(':', '') | int %}
+          {% set current_day_start_time = (states('input_datetime.km_' + current_day + '_start_date_LOCKNAME_TEMPLATENUM')[0:5]).replace(':', '') | int %}
+          {% set current_day_end_time = (states('input_datetime.km_' + current_day + '_end_date_LOCKNAME_TEMPLATENUM')[0:5]).replace(':', '') | int %}
           {% set is_time_range_enabled = (current_day_start_time != current_day_end_time) %}
-          {% set is_time_range_inclusive = is_state('input_boolean.keymaster_' + current_day + '_inc_LOCKNAME_TEMPLATENUM', 'on') %}
+          {% set is_time_range_inclusive = is_state('input_boolean.km_' + current_day + '_inc_LOCKNAME_TEMPLATENUM', 'on') %}
           {% set is_in_time_range = (
             (is_time_range_inclusive and (current_time >= current_day_start_time and current_time <= current_day_end_time))
             or
@@ -244,12 +244,12 @@ binary_sensor:
           ) %}
 
           {## Get whether code slot is active and current day is enabled ##}
-          {% set is_slot_enabled = is_state('input_boolean.keymaster_enabled_LOCKNAME_TEMPLATENUM', 'on') %}
-          {% set is_current_day_enabled = is_state('input_boolean.keymaster_' + current_day + '_LOCKNAME_TEMPLATENUM', 'on') %}
+          {% set is_slot_enabled = is_state('input_boolean.km_enabled_LOCKNAME_TEMPLATENUM', 'on') %}
+          {% set is_current_day_enabled = is_state('input_boolean.km_' + current_day + '_LOCKNAME_TEMPLATENUM', 'on') %}
 
           {## Check if access limit is enabled and if there are access counts left. ##}
-          {% set is_access_limit_enabled = is_state('input_boolean.keymaster_accesslimit_LOCKNAME_TEMPLATENUM', 'on') %}
-          {% set is_access_count_valid = states('input_number.keymaster_accesscount_LOCKNAME_TEMPLATENUM') | int > 0 %}
+          {% set is_access_limit_enabled = is_state('input_boolean.km_accesslimit_LOCKNAME_TEMPLATENUM', 'on') %}
+          {% set is_access_count_valid = states('input_number.km_accesscount_LOCKNAME_TEMPLATENUM') | int > 0 %}
 
           {## Code slot is active if slot is enabled + current day is enabled + date range is not enabled or current date is within date range ##}
           {## + time range is not enabled or current time is within time range (based on include/exclude) + access limit is not enabled or there are more access counts left ##}
@@ -263,12 +263,12 @@ binary_sensor:
             (not is_access_limit_enabled or is_access_count_valid)
           }}
 
-      keymaster_pin_synched_LOCKNAME_TEMPLATENUM:
+      km_pin_synched_LOCKNAME_TEMPLATENUM:
         friendly_name: "PIN synchronized with lock"
         value_template: >
-          {% set lockpin = states('sensor.keymaster_LOCKNAME_code_slot_TEMPLATENUM').strip()  %}
-          {% set localpin = states('input_text.keymaster_LOCKNAME_pin_TEMPLATENUM').strip()  %}
-          {% set pin_active = is_state('binary_sensor.keymaster_active_LOCKNAME_TEMPLATENUM', 'on')  %}
+          {% set lockpin = states('sensor.km_LOCKNAME_code_slot_TEMPLATENUM').strip()  %}
+          {% set localpin = states('input_text.km_LOCKNAME_pin_TEMPLATENUM').strip()  %}
+          {% set pin_active = is_state('binary_sensor.km_active_LOCKNAME_TEMPLATENUM', 'on')  %}
           {% if lockpin == "0000" %}
           {%   set lockpin = "" %}
           {% endif %}
@@ -282,11 +282,11 @@ binary_sensor:
 sensor:
   - platform: template
     sensors:
-      keymaster_connected_LOCKNAME_TEMPLATENUM:
+      km_connected_LOCKNAME_TEMPLATENUM:
         friendly_name: "PIN Status"
         value_template: >-
-          {% set pin_active = is_state('binary_sensor.keymaster_active_LOCKNAME_TEMPLATENUM', 'on')  %}      
-          {% set synched = is_state('binary_sensor.keymaster_pin_synched_LOCKNAME_TEMPLATENUM', 'on')  %}      
+          {% set pin_active = is_state('binary_sensor.km_active_LOCKNAME_TEMPLATENUM', 'on')  %}      
+          {% set synched = is_state('binary_sensor.km_pin_synched_LOCKNAME_TEMPLATENUM', 'on')  %}      
           {% if pin_active %}
             {% if synched %}
               Connected
@@ -301,8 +301,8 @@ sensor:
             {% endif %}
           {% endif %}
         icon_template: >
-          {% set pin_active = is_state('binary_sensor.keymaster_active_LOCKNAME_TEMPLATENUM', 'on')  %}      
-          {% set synched = is_state('binary_sensor.keymaster_pin_synched_LOCKNAME_TEMPLATENUM', 'on')  %}      
+          {% set pin_active = is_state('binary_sensor.km_active_LOCKNAME_TEMPLATENUM', 'on')  %}      
+          {% set synched = is_state('binary_sensor.km_pin_synched_LOCKNAME_TEMPLATENUM', 'on')  %}      
           {% if pin_active %}
             {% if synched %}
               mdi:folder-key
@@ -315,4 +315,4 @@ sensor:
             {% else %}
               mdi:wiper-wash
             {% endif %}
-          {% 
+          {% endif %}
